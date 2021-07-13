@@ -1,13 +1,18 @@
 from tkinter import *
-import date
+from datetime import *
+
 
 root = Tk()
 root.geometry("700x500")
 root.title("age calculator")
 
+photo = PhotoImage(file="/sdcard/python_projects/tkinter_proj/calc.png")
+myimage = Label(image = photo)
+myimage.grid(row=0,column=1)
+
 def calculateage():
 	today = date.today()
-	birthdate = date(int(Yearentry.get()),int(Monthentry.get()),int(Dateentry.get()))
+	birthdate = date(int(Yearentry.get()),int(Monthentry.get()),int(Dayentry.get()))
 	age = today.year - birthdate.year - ((today.month,today.day) < (birthdate.month,birthdate.day))
 	Label(text=f"{Namevalue.get()} your age is {age}").grid(row=6,column=1)
 
