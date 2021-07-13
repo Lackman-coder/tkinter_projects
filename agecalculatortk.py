@@ -1,5 +1,5 @@
 from tkinter import *
-import datetime
+import date
 
 root = Tk()
 root.geometry("700x500")
@@ -9,7 +9,7 @@ def calculateage():
 	today = date.today()
 	birthdate = date(int(Yearentry.get()),int(Monthentry.get()),int(Dateentry.get()))
 	age = today.year - birthdate.year - ((today.month,today.day) < (birthdate.month,birthdate.day))
-	Label(text=f"{Namevalue get()} your age is {age}").grid(row=6,column=1)
+	Label(text=f"{Namevalue.get()} your age is {age}").grid(row=6,column=1)
 
 Label(text = "Name").grid(row = 1,column= 0,padx=90)
 Label(text="Year").grid(row=2,column=0)
